@@ -3,7 +3,7 @@ module github.com/idawud/bookstore
 go 1.14
 
 require (
-	github.com/arsmn/fiber-swagger v1.3.1 // indirect
+	github.com/arsmn/fiber-swagger v1.3.1
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/go-openapi/spec v0.19.7 // indirect
 	github.com/go-openapi/swag v0.19.9 // indirect
