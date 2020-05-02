@@ -118,6 +118,7 @@
                 "parameters": [
                     {
                         "type": "integer",
+                        "format": "int64",
                         "description": "Book ID",
                         "name": "id",
                         "in": "path",
@@ -163,6 +164,7 @@
                 "parameters": [
                     {
                         "type": "integer",
+                        "format": "int64",
                         "description": "Book ID",
                         "name": "id",
                         "in": "path",
@@ -217,6 +219,7 @@
                 "parameters": [
                     {
                         "type": "integer",
+                        "format": "int64",
                         "description": "Book ID",
                         "name": "id",
                         "in": "path",

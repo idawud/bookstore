@@ -94,6 +94,7 @@ paths:
       description: Delete Book by id
       parameters:
       - description: Book ID
+        format: int64
         in: path
         name: id
         required: true
@@ -124,6 +125,7 @@ paths:
       description: Get Book by id
       parameters:
       - description: Book ID
+        format: int64
         in: path
         name: id
         required: true
@@ -154,6 +156,7 @@ paths:
       description: update existing Book
       parameters:
       - description: Book ID
+        format: int64
         in: path
         name: id
         required: true

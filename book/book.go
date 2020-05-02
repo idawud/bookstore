@@ -43,7 +43,7 @@ func GetAllBooks(ctx *fiber.Ctx) {
 // @Description Get Book by id
 // @Accept json
 // @Produce json
-// @Param id path int true "Book ID"
+// @Param id path int true "Book ID" Format(int64)
 // @Success 200 {object} Book
 // @Failure 400 {object} HTTPError
 // @Failure 404 {object} HTTPError
@@ -98,7 +98,7 @@ func AddBook(ctx *fiber.Ctx) {
 // @Description Delete Book by id
 // @Accept json
 // @Produce json
-// @Param id path int true "Book ID"
+// @Param id path int true "Book ID" Format(int64)
 // @Success 200 {object} Book
 // @Failure 400 {object} HTTPError
 // @Failure 404 {object} HTTPError
@@ -128,7 +128,7 @@ func DeleteBook(ctx *fiber.Ctx) {
 // @Description update existing Book
 // @Accept json
 // @Produce json
-// @Param id path int true "Book ID"
+// @Param id path int true "Book ID" Format(int64)
 // @Param book body Book true "Add book"
 // @Success 200 {object} Book
 // @Failure 400 {object} HTTPError
