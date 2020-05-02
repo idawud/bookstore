@@ -1,0 +1,187 @@
+basePath: /
+definitions:
+  book.Book:
+    properties:
+      author:
+        type: string
+      rating:
+        type: integer
+      title:
+        type: string
+    type: object
+  book.HTTPError:
+    properties:
+      message:
+        type: string
+      status:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: ismaildawud96@gmail.com
+    name: idawud
+  description: This is a swagger for my bookstore api
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: BookStore API
+  version: "1.0"
+paths:
+  /api/v1/book:
+    get:
+      consumes:
+      - application/json
+      description: list out all books available
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/book.Book'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+      summary: Show all books
+    post:
+      consumes:
+      - application/json
+      description: Add new Book
+      parameters:
+      - description: Add book
+        in: body
+        name: book
+        required: true
+        schema:
+          $ref: '#/definitions/book.Book'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/book.Book'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+      summary: Add new Book
+  /api/v1/book/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Book by id
+      parameters:
+      - description: Book ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/book.Book'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+      summary: Delete Book by id
+    get:
+      consumes:
+      - application/json
+      description: Get Book by id
+      parameters:
+      - description: Book ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/book.Book'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+      summary: Get Book by id
+    put:
+      consumes:
+      - application/json
+      description: update existing Book
+      parameters:
+      - description: Book ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Add book
+        in: body
+        name: book
+        required: true
+        schema:
+          $ref: '#/definitions/book.Book'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/book.Book'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/book.HTTPError'
+      summary: update existing Book
+swagger: "2.0"
