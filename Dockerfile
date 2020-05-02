@@ -14,6 +14,8 @@ RUN go get -u github.com/swaggo/swag/cmd/swag
 RUN swag init
 # Our project will now successfully build with the necessary go libraries included.
 RUN go build -o main .
+# Expose port 8080 to the outside world
+EXPOSE 3000
 # Our start command which kicks off
 # our newly created binary executable
 CMD ["/app/main"]
